@@ -2,6 +2,6 @@
     MOV    AX, (x)
     SUB    AX, (y)
 .SECT .DATA
-x:  .WORD   3
-y:  .WORD   2
+x:  .WORD   5
+y:  .WORD   3
 .SECT .BSS
