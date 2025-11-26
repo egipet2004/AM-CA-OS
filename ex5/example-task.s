@@ -14,9 +14,8 @@ STDIN	=	0	! three initially opened file descriptors
 STDOUT	=	1 
 STDERR	=	2
 .SECT   .TEXT
-
-	PUSH	0600
-        PUSH    file_name
+    PUSH	0600
+    PUSH    file_name
 	PUSH	_CREAT			! create file, file descriptor in AX
 	SYS
 	ADD 	SP, 6
@@ -27,22 +26,19 @@ STDERR	=	2
 	PUSH 	_CLOSE
 	SYS
 		
-        ADD     SP, 4
-        PUSH    0
-        PUSH    _EXIT
-        SYS
+    ADD     SP, 4
+    PUSH    0
+    PUSH    _EXIT
+    SYS
 ERROR:		
-
-        PUSH    str_error
-        PUSH    _PRINTF         ! AX fmt _PRINTF
-        SYS
-        ADD     SP, 4
-        PUSH    0
-        PUSH    _EXIT
-        SYS
-
+    PUSH    str_error
+    PUSH    _PRINTF         ! AX fmt _PRINTF
+    SYS
+    ADD     SP, 4
+    PUSH    0
+    PUSH    _EXIT
+    SYS
 .SECT   .DATA
 file_name:    .ASCIZ  "./test1.dat"
 str_error:    .ASCIZ  "Error.  File ./test1.dat is not created \n"	
-
 .SECT   .BSS
