@@ -1,5 +1,5 @@
 _EXIT = 1
-_PRINTF = 128
+_PRINTF = 127
 .SECT .TEXT
     PUSH    res_arr
     PUSH    arr
