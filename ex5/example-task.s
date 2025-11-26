@@ -21,11 +21,9 @@ STDERR	=	2
 	ADD 	SP, 6
 	CMP AX, -1
 	JZ	ERROR	
-
 	PUSH	AX
 	PUSH 	_CLOSE
-	SYS
-		
+	SYS	
     ADD     SP, 4
     PUSH    0
     PUSH    _EXIT
